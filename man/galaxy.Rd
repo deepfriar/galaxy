@@ -5,7 +5,9 @@
 \title{LaTeX regression tables}
 \usage{
 galaxy(x, .captn = NULL, .paren = "std.error", .starz = c(0.05, 0.01,
-  0.001), .charz = "*", .digit = 3, .above = NULL, .below = NULL, ...)
+  0.001), .charz = "*", .digit = 3, .above = NULL, .below = NULL,
+  .place = "!htb", .tomit = NULL, .scien = NA, .ndrop = FALSE,
+  .incol = character(0), .merge = NULL, ...)
 }
 \arguments{
 \item{x}{a model object, \code{wickr::\link[wickr]{sumer}} object, or \code{list} thereof}
@@ -14,15 +16,27 @@ galaxy(x, .captn = NULL, .paren = "std.error", .starz = c(0.05, 0.01,
 
 \item{.paren}{character. Value to parenthesize. \code{"p.value"}, \code{"none"}, or \code{"std.error"} (the default).}
 
-\item{.starz}{numeric. Significance levels. Default \code{c(0.05, 0.01, 0.001)}.}
+\item{.starz}{numeric.   Significance levels. Default \code{c(0.05, 0.01, 0.001)}.}
 
 \item{.charz}{character. Character by which to symbolize statistical significance. Default \code{"*"}.}
 
-\item{.digit}{numeric. Number of places to round decimals to. Default \code{3}.}
+\item{.digit}{numeric.   Number of places to round decimals to. Default \code{3}.}
 
 \item{.above}{character. Names of model metadata values to include ABOVE table. Default \code{NULL}.}
 
 \item{.below}{character. Names of model metadata values to include BELOW table. Default \code{NULL}.}
+
+\item{.place}{character. LaTeX table placement. Default \code{"!htb"}.}
+
+\item{.tomit}{character. (Partial) names of terms to omit from table. Default \code{NULL}.}
+
+\item{.scien}{logical.   Use scientific notation? Default \code{NA} (auto).}
+
+\item{.ndrop}{logical.   Leave a note about dropped columns? Actually rather annoying. Default \code{FALSE}.}
+
+\item{.incol}{character. Columns by which to widen data. Only \code{"outcome"} supported. Default \code{NULL}.}
+
+\item{.merge}{character. Columns to merge with \code{"term"}. Only \code{"level"} supported. Default \code{NULL}.}
 
 \item{...}{other arguments passed to \code{\link[xtable]{print.xtable}} and/or \code{\link[wickr]{sumer}}.}
 }
