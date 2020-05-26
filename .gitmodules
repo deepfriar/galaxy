@@ -1,0 +1,3 @@
+[submodule "vignettes/baser"]
+	path = vignettes/baser
+	url = https://github.com/pol-db4drd2/baser.git

@@ -4,10 +4,42 @@
 \alias{galaxy}
 \title{LaTeX regression tables}
 \usage{
-galaxy(x, .captn = NULL, .paren = "std.error", .starz = c(0.05, 0.01,
-  0.001), .charz = "*", .digit = 3, .above = NULL, .below = NULL,
-  .place = "!htb", .tomit = NULL, .scien = NA, .ndrop = FALSE,
-  .incol = character(0), .merge = NULL, ...)
+galaxy(
+  x,
+  .captn = NULL,
+  .paren = "std.error",
+  .starz = c(0.05, 0.01, 0.001),
+  .charz = c("*", "**", "***"),
+  .digit = 3,
+  .above = NULL,
+  .below = NULL,
+  .place = "!htb",
+  .tomit = NULL,
+  .comit = NULL,
+  .scien = NA,
+  .ndrop = FALSE,
+  .incol = character(0),
+  .merge = FALSE,
+  .float = TRUE,
+  .order = NULL,
+  .naout = FALSE,
+  .print = TRUE,
+  .oterm = FALSE,
+  .ttype = "latex",
+  .space = "2.25ex",
+  .title = NULL,
+  .capup = FALSE,
+  .headr = TRUE,
+  .check = NULL,
+  .hinot = NULL,
+  .point = TRUE,
+  .notit = FALSE,
+  .toppr = NULL,
+  .modno = TRUE,
+  .align = "r",
+  .tbold = setdiff(.order, "(Intercept)"),
+  ...
+)
 }
 \arguments{
 \item{x}{a model object, \code{wickr::\link[wickr]{sumer}} object, or \code{list} thereof}
@@ -18,7 +50,7 @@ galaxy(x, .captn = NULL, .paren = "std.error", .starz = c(0.05, 0.01,
 
 \item{.starz}{numeric.   Significance levels. Default \code{c(0.05, 0.01, 0.001)}.}
 
-\item{.charz}{character. Character by which to symbolize statistical significance. Default \code{"*"}.}
+\item{.charz}{character. Symbols for sugbufucabce kevels. Default \code{c("*", "**", "***")}.}
 
 \item{.digit}{numeric.   Number of places to round decimals to. Default \code{3}.}
 
@@ -30,13 +62,51 @@ galaxy(x, .captn = NULL, .paren = "std.error", .starz = c(0.05, 0.01,
 
 \item{.tomit}{character. (Partial) names of terms to omit from table. Default \code{NULL}.}
 
+\item{.comit}{character. (Partial) names of _components_ to omit from table. Default \code{NULL}.}
+
 \item{.scien}{logical.   Use scientific notation? Default \code{NA} (auto).}
 
 \item{.ndrop}{logical.   Leave a note about dropped columns? Actually rather annoying. Default \code{FALSE}.}
 
 \item{.incol}{character. Columns by which to widen data. Only \code{"outcome"} supported. Default \code{NULL}.}
 
-\item{.merge}{character. Columns to merge with \code{"term"}. Only \code{"level"} supported. Default \code{NULL}.}
+\item{.merge}{character. merge \code{level} into \code{term}? Default \code{FALSE}.}
+
+\item{.float}{logical.   Do we all float down here? Default \code{TRUE}.}
+
+\item{.order}{character. Terms to pull to the top of the table, in order. Default \code{NULL}.}
+
+\item{.naout}{logical.   Drop rows for vars with NA estimates? Don't actually do this. Default \code{FALSE}.}
+
+\item{.print}{logical.   Barf the result to the screen? \code{FALSE} to return _only_. Default \code{TRUE}.}
+
+\item{.oterm}{logical.   Omit the \code{term} column if only one term is reported? Default \code{FALSE}.}
+
+\item{.ttype}{character. Table type. \code{"latex"} or \code{"html"}. Default \code{"latex"}.}
+
+\item{.space}{character. Space between rows, in LaTeX notation. Default \code{"2.25ex"}.}
+
+\item{.title}{character. Columns to transform to title case. Default \code{NULL}.}
+
+\item{.capup}{logical.   Caption at top of table if \code{.float==FALSE}? Default \code{FALSE} (at bottom).}
+
+\item{.headr}{logical.   Display hierarchical header? Default \code{TRUE}.}
+
+\item{.check}{character. Hierarchical organization columns to display below instead of above table. Default \code{NULL}.}
+
+\item{.hinot}{character. STuff to put atop the hierarchical header (if any). Default \code{NULL}.}
+
+\item{.point}{logical.   Align columns on decimal point? Default \code{TRUE}.}
+
+\item{.notit}{logical.   Notes at bottom in italics? Default \code{FALSE}.}
+
+\item{.toppr}{character. LaTeX code to put at the very top of the table. Default \code{NULL}.}
+
+\item{.modno}{logical.   Number models? Default \code{TRUE}.}
+
+\item{.align}{character. Alignment of left-side columns. Default \code{"r"}.}
+
+\item{.tbold}{character. Bold these terms. Default \code{setdiff(.order, "(Intercept)")}.}
 
 \item{...}{other arguments passed to \code{\link[xtable]{print.xtable}} and/or \code{\link[wickr]{sumer}}.}
 }

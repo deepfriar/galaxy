@@ -1,0 +1,158 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames*,x11names*}{xcolor}
+%
+\documentclass[
+]{article}
+\usepackage[]{fourier}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={EPR3 varnames},
+  pdfauthor={2020-05-20},
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=Maroon,
+  citecolor=Blue,
+  urlcolor=Blue,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{dcolumn}
+\newcolumntype{d}{{D{.}{.}{-1}}}
+\usepackage{pdflscape}
+\usepackage{supertabular}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{nameref}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{tocloft}
+\usepackage{etoc}
+
+\usepackage[explicit]{titlesec}
+\usepackage[normalem]{ulem}
+
+% \setcounter{secnumdepth}{4}
+
+\titleformat{\section}{\normalsize\bfseries}{\thesection}{1em}{\uline{#1}}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{#1}
+\titleformat{\subsubsection}{\normalsize\itshape}{\thesubsubsection}{1em}{\uline{#1}}
+% \titleformat{\paragraph}{\normalsize}{\theparagraph}{1em}{\uline{#1}}
+\titleformat{\paragraph}[runin]{\normalsize}{\theparagraph}{1em}{\uline{#1}}
+\titleformat{\subparagraph}[runin]{\normalsize\itshape}{\thesubparagraph}{1em}{{#1}.}
+
+% \newcommand{\esp}{\begin{subparagraph}\end{subparagraph}}
+\newcommand{\eitc}{\etocsetnexttocdepth{1}\etocsettocstyle{}{}\tableofcontents}
+\newcommand{\ejtc}{\etocsetnexttocdepth{2}\etocsettocstyle{}{}\tableofcontents}
+\newcommand{\ektc}{\etocsetnexttocdepth{3}\etocsettocstyle{}{}\tableofcontents}
+\newcommand{\eltc}{\etocsetnexttocdepth{4}\etocsettocstyle{}{}\tableofcontents}
+\newcommand{\eptc}{\addtocontents{toc}{\cftpagenumbersoff{section}}}
+\newcommand{\eotc}{\addtocontents{toc}{\cftpagenumbersoff{subsection}}}
+\newcommand{\entc}{\addtocontents{toc}{\cftpagenumbersoff{subsubsection}}}
+\newcommand{\emtc}{\addtocontents{toc}{\cftpagenumbersoff{paragraph}}}
+\newcommand{\nl}{\newline}
+\newcommand{\blandscape}{\begin{landscape}}
+\newcommand{\elandscape}{\end{landscape}}
+\cftsetindents{paragraph}{\leftmargin}{\itemindent}
+\renewcommand{\cftparaaftersnumb}{\textbullet }
+% \setlength{\cftbeforesecskip}{\cftbeforesubsecskip} % whoa what do these do
+% \setlength{\cftsubparaindent}{\cftsubsubsecindent} %
+% \setlength{\cftsubsubsecindent}{\cftparaindent} %
+\newcommand{\bmccc}{\begin{multicols}{3}}
+\newcommand{\bmcc}{\begin{multicols}{2}}
+\newcommand{\emc}{\end{multicols}}
+\newcommand{\ltotab}{\renewcommand{\longtable}{\tabular}}
+\newcommand{\eltotab}{\renewcommand{\endlongtable}{\endtabular}}
+\newcommand{\R}{\texttt{R}{ }} % but one can always just type `R` % perhaps this could be for `R` (R Core Team 2018) ?
+\newcommand{\bnb}{\bibliography{~/arsenoff.bib}} % never used
+\newcommand{\ztab}{\setlength{\tabcolsep}{0pt}}
+\newcommand{\ntab}{\setlength{\tabcolsep}{1pt}}
+\newcommand{\ttab}{\setlength{\tabcolsep}{2pt}}
+\newcommand{\utab}{\setlength{\tabcolsep}{6pt}}
+\newcommand{\bxwide}{\newgeometry{left=0.5in, right=0.5in, top=1in, bottom=1in}}
+\newcommand{\exwide}{\newgeometry{margin=1in}}
+
+\title{EPR3 varnames}
+\author{2020-05-20}
+\date{}
+
+\begin{document}
+\maketitle
+
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\ztab
+\blandscape
+\begin{center}
+\begin{tabular}{rdddddddddddd}
+  \multicolumn{1}{c}{ } & \multicolumn{2}{c}{A} & \multicolumn{2}{c}{B} & \multicolumn{2}{c}{C} & \multicolumn{2}{c}{D} & \multicolumn{2}{c}{E} & \multicolumn{2}{c}{F}  \\  \cmidrule(l){2-3} \cmidrule(l){4-5} \cmidrule(l){6-7} \cmidrule(l){8-9} \cmidrule(l){10-11} \cmidrule(l){12-13}\multicolumn{1}{c}{ } & \multicolumn{1}{c}{} & \multicolumn{1}{c}{FEs} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{FEs} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{FEs} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{FEs} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{FEs} & \multicolumn{1}{c}{} & \multicolumn{1}{c}{FEs} \\ 
+  \hline
+\rule{0pt}{2.25ex}minority &  &  & -0.032^{*} & 0.014^{} & -0.046^{**} & 0.006^{} &  &  & -0.084^{**} & -0.034^{} & -0.104^{***} & -0.045^{} \\ 
+   &  &  & (0.014) & (0.020) & (0.015) & (0.021) &  &  & (0.031) & (0.036) & (0.028) & (0.032) \\ 
+  \rule{0pt}{2.25ex}Dissim. & 0.054^{***} & 0.014^{} &  &  & 0.059^{***} & 0.013^{} & 0.045^{**} & 0.011^{} &  &  & 0.055^{***} & 0.018^{} \\ 
+   & (0.012) & (0.014) &  &  & (0.012) & (0.015) & (0.014) & (0.016) &  &  & (0.014) & (0.015) \\ 
+  \rule{0pt}{2.25ex}poverty &  &  &  &  &  &  & 0.078^{} & 0.091^{} & 0.183^{*} & 0.125^{} & 0.176^{*} & 0.127^{} \\ 
+   &  &  &  &  &  &  & (0.049) & (0.063) & (0.080) & (0.087) & (0.075) & (0.085) \\ 
+  \rule{0pt}{2.25ex}Mfg. &  &  &  &  &  &  & 0.062^{} & -0.065^{} & 0.055^{} & -0.062^{} & -0.011^{} & -0.075^{} \\ 
+   &  &  &  &  &  &  & (0.040) & (0.060) & (0.050) & (0.064) & (0.047) & (0.062) \\ 
+  \rule{0pt}{2.25ex}rural &  &  &  &  &  &  & 0.011^{} & 0.009^{} & 0.005^{} & 0.008^{} & 0.006^{} & 0.009^{} \\ 
+   &  &  &  &  &  &  & (0.008) & (0.009) & (0.010) & (0.009) & (0.009) & (0.009) \\ 
+   \hline
+\rule{0pt}{2.25ex}AIC & \multicolumn{1}{c}{-1512.893} & \multicolumn{1}{c}{-1565.266} & \multicolumn{1}{c}{-1497.461} & \multicolumn{1}{c}{-1564.445} & \multicolumn{1}{c}{-1518.449} & \multicolumn{1}{c}{-1563.33} & \multicolumn{1}{c}{-1515.197} & \multicolumn{1}{c}{-1569.029} & \multicolumn{1}{c}{-1515.61} & \multicolumn{1}{c}{-1569.747} & \multicolumn{1}{c}{-1531.952} & \multicolumn{1}{c}{-1569.523} \\ 
+  n & \multicolumn{1}{c}{348} & \multicolumn{1}{c}{348} & \multicolumn{1}{c}{348} & \multicolumn{1}{c}{348} & \multicolumn{1}{c}{348} & \multicolumn{1}{c}{348} & \multicolumn{1}{c}{348} & \multicolumn{1}{c}{348} & \multicolumn{1}{c}{348} & \multicolumn{1}{c}{348} & \multicolumn{1}{c}{348} & \multicolumn{1}{c}{348} \\ 
+   \hline \multicolumn{13}{r}{+ p < 0.1; * p < 0.05; ** p < 0.01; *** p < 0.001; standard errors in parentheses} \\\end{tabular}
+\captionof{table}{}
+\end{center}
+\elandscape
+
+\end{document}

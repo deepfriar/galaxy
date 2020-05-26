@@ -1,0 +1,46 @@
+---
+title: "EPR3 varnames (not)"
+author: "`r Sys.Date()`"
+knit: (function(input_file, encoding, ...) {rmarkdown::render(input_file, encoding=encoding, output_dir=getwd())}) # wut
+output:
+  pdf_document:
+    keep_tex: yes
+    toc: true
+    toc_depth: 2
+    includes:
+      in_header: baser/base.tex
+    fig_caption: true
+geometry: margin=1in
+subparagraph: true
+params:
+  from_scratch: true
+  # from_scratch: false
+linkcolor: blue
+fontfamily: fourier
+bibliography: baser/arsenoff.bib
+vignette: >
+  %\VignetteIndexEntry{Vignette Title (not)}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(eval=FALSE, include=FALSE)
+```
+
+\begin{center}
+\begin{tabular}{ldd}
+  \hline\hline  \multicolumn{1}{c}{ } & \multicolumn{2}{c}{Dependent variable (continuous): Rate among indicated - Linear} \\ \cmidrule(l){2-3}\multicolumn{1}{c}{ } & \multicolumn{1}{c}{middle class} & \multicolumn{1}{c}{skilled working class} \\ 
+  \hline
+\rule{0pt}{2.25ex}(Intercept) & \multicolumn{1}{c}{$0.382^{***}$} & \multicolumn{1}{c}{$0.042^{***}$} \\ 
+   & \multicolumn{1}{c}{$(0.002)$} & \multicolumn{1}{c}{$(0.002)$} \\ 
+  \rule{0pt}{6ex}Pov & \multicolumn{1}{c}{$0.788^{***}$} & \multicolumn{1}{c}{$0.972^{***}$} \\ 
+   & \multicolumn{1}{c}{$(0.008)$} & \multicolumn{1}{c}{$(0.011)$} \\ 
+   \hline
+\rule{0pt}{2.25ex}r.squared & \multicolumn{1}{c}{0.566} & \multicolumn{1}{c}{0.537} \\ 
+   n & \multicolumn{1}{c}{7201} & \multicolumn{1}{c}{7201} \\ 
+   \hline \multicolumn{1}{l}{\textit{Note:}} & \multicolumn{2}{r}{\textit{+ p < 0.1; * p < 0.05; ** p < 0.01; *** p < 0.001; standard errors in parentheses}} \\\end{tabular}
+\captionof{table}{Rate in indicated population vs. rate in White population, MSOAs}
+\end{center}

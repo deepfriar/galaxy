@@ -9,10 +9,20 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports:
+    dplyr,
     methods,
     plyr,
+    purrr,
+    qpdf,
     reshape2,
+    rlang,
     stringr,
+    tidyr,
+    tidyselect,
     wickr,
     xtable
-RoxygenNote: 6.0.1
+RoxygenNote: 7.1.0
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
