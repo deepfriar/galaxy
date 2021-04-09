@@ -29,18 +29,347 @@ editor_options:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(eval=FALSE, include=FALSE)
 ```
+## Lebanon, Citizen
 
-\begin{center}
-\begin{tabular}{ldd}
-  \hline\hline  \multicolumn{1}{c}{ } & \multicolumn{2}{c}{Dependent variable (continuous): Rate among indicated - Linear} \\ \cmidrule(l){2-3}\multicolumn{1}{c}{ } & \multicolumn{1}{c}{middle class} & \multicolumn{1}{c}{skilled working class} \\ 
-  \hline
-\rule{0pt}{2.25ex}(Intercept) & \multicolumn{1}{c}{$0.382^{***}$} & \multicolumn{1}{c}{$0.042^{***}$} \\ 
-   & \multicolumn{1}{c}{$(0.002)$} & \multicolumn{1}{c}{$(0.002)$} \\ 
-  \rule{0pt}{6ex}Pov & \multicolumn{1}{c}{$0.788^{***}$} & \multicolumn{1}{c}{$0.972^{***}$} \\ 
-   & \multicolumn{1}{c}{$(0.008)$} & \multicolumn{1}{c}{$(0.011)$} \\ 
-   \hline
-\rule{0pt}{2.25ex}r.squared & \multicolumn{1}{c}{0.566} & \multicolumn{1}{c}{0.537} \\ 
-   n & \multicolumn{1}{c}{7201} & \multicolumn{1}{c}{7201} \\ 
-   \hline \multicolumn{1}{l}{\textit{Note:}} & \multicolumn{2}{r}{\textit{+ p < 0.1; * p < 0.05; ** p < 0.01; *** p < 0.001; standard errors in parentheses}} \\\end{tabular}
-\captionof{table}{Rate in indicated population vs. rate in White population, MSOAs}
-\end{center}
+
+
+### id
+
+\textit{id}
+
+|         |   |
+|:--------|--:|
+|55028755 |  1|
+|55028754 |  1|
+|55028752 |  1|
+|55028751 |  1|
+
+
+
+
+### Q1
+
+\textit{1. How would you evaluate the current economic situation in your country? }
+
+|                  |    |
+|:-----------------|---:|
+|Refused to answer |   0|
+|I don’t know      |   2|
+|Very bad          | 850|
+|Bad               | 140|
+
+
+
+
+### Q2
+
+\textit{2. In what Governorate did you primarily grow up?}
+
+|                 |    |
+|:----------------|---:|
+|No answer        |   0|
+|Don’t know       |   0|
+|Abroad           |   0|
+|El Nabatieh      |  38|
+
+
+
+
+### random
+
+\textit{random}
+
+|   |    |
+|:--|---:|
+|6  | 157|
+|5  | 163|
+|4  | 172|
+|3  | 172|
+
+
+
+
+### Q1_1_1
+
+\textit{1. Based on the hypothetical situation, do you think Minister M’s actions are ap}
+
+|             |    |
+|:------------|---:|
+|NA           | 829|
+|I don’t know |   5|
+|7            |   3|
+|6            |   2|
+
+
+
+
+### Q1_1_2
+
+\textit{2. Based on the hypothetical situation, do you think Minister M’s actions are ac}
+
+|             |    |
+|:------------|---:|
+|NA           | 829|
+|I don’t know |   4|
+|8            |   3|
+|7            |   3|
+
+
+
+## Lebanon, Elite
+
+
+
+### id
+
+\textit{id}
+
+|    |   |
+|:---|--:|
+|750 |  1|
+|749 |  1|
+|748 |  1|
+|747 |  1|
+
+
+
+
+### Q1
+
+\textit{1. How would you evaluate the current economic situation in your country?}
+
+|                  |    |
+|:-----------------|---:|
+|Refused to answer |   2|
+|I don’t know      |   4|
+|Very bad          | 546|
+|Bad               | 196|
+
+
+
+
+### Q2
+
+\textit{2. In what District did you primarily grow up?}
+
+|                 |   |
+|:----------------|--:|
+|No answer        |  6|
+|Don’t know       |  0|
+|Abroad           |  1|
+|El Nabatieh      | 70|
+
+
+
+
+### random
+
+\textit{random}
+
+|   |    |
+|:--|---:|
+|6  | 127|
+|5  | 129|
+|4  | 124|
+|3  | 116|
+
+
+
+
+### Q1_1_1
+
+\textit{1. Based on the hypothetical situation, do you think Minister M’s actions are ap}
+
+|                  |    |
+|:-----------------|---:|
+|NA                | 623|
+|Refused to answer |   0|
+|I don’t know      |   0|
+|5                 |   1|
+
+
+
+
+### Q1_1_2
+
+\textit{2. Based on the hypothetical situation, do you think Minister M’s actions are ac}
+
+|                  |    |
+|:-----------------|---:|
+|NA                | 623|
+|Refused to answer |   0|
+|I don’t know      |   0|
+|8                 |   1|
+
+
+
+## Tunisia, Citizen
+
+
+
+### Q1
+
+\textit{Q1.How would you evaluate the current economic situation in your country?}
+
+|                  |    |
+|:-----------------|---:|
+|Refused to answer |   1|
+|I don’t know      |  15|
+|Very bad          | 585|
+|Bad               | 289|
+
+
+
+
+### Q2
+
+\textit{Q2.In what Governorate did you primarily grow up?}
+
+|                    |    |
+|:-------------------|---:|
+|Decline to answer   |   0|
+|I don't know        |   1|
+|Outside the country |   4|
+|Kebili              |  22|
+
+
+
+
+### Q17
+
+\textit{Q17.Generally speaking, would you say that most people can be trusted, or you ca}
+
+|                              |    |
+|:-----------------------------|---:|
+|Refused to answer             |   0|
+|I don’t know                  |   4|
+|10 Most people can be trusted |  64|
+|9                             |  11|
+
+
+
+
+### Q18
+
+\textit{Q18.How would you describe yourself: Are you generally an impatient person, or s}
+
+|                  |    |
+|:-----------------|---:|
+|Refused to answer |   0|
+|I don’t know      |   4|
+|10 Very patient   | 392|
+|9                 |  69|
+
+
+
+
+### Q19
+
+\textit{Q19.How do you see yourself at work: are you generally a person who is fully pre}
+
+|                                   |    |
+|:----------------------------------|---:|
+|Refused to answer                  |   1|
+|I don’t know                       |  10|
+|10 Very willing to take risks      | 176|
+|9                                  |  51|
+
+
+
+
+### Q20
+
+\textit{Q20.You are given the opportunity to take a new and equally good job, with a 50-}
+
+|                          |    |
+|:-------------------------|---:|
+|Refused to answer         |   3|
+|I don’t know              |  12|
+|Stay with the current job | 773|
+|Take the new job          | 212|
+
+
+
+## Tunisia, Elite
+
+
+
+### id
+
+\textit{id}
+
+|    |   |
+|:---|--:|
+|750 |  1|
+|749 |  1|
+|748 |  1|
+|747 |  1|
+
+
+
+
+### Q1
+
+\textit{Q1.How would you evaluate the current economic situation in your country?}
+
+|                  |    |
+|:-----------------|---:|
+|Refused to answer |   0|
+|I don’t know      |   2|
+|Very bad          | 303|
+|Bad               | 400|
+
+
+
+
+### Q2
+
+\textit{Q2.In what Governorate did you primarily grow up?}
+
+|                    |    |
+|:-------------------|---:|
+|Decline to answer   |   0|
+|I don't know        |   0|
+|Outside the country |   0|
+|Kebili              |   1|
+
+
+
+
+### Q17
+
+\textit{Q17.Generally speaking, would you say that most people can be trusted, or you ca}
+
+|                              |    |
+|:-----------------------------|---:|
+|Refused to answer             |   1|
+|I don’t know                  |   2|
+|10 Most people can be trusted |  23|
+|9                             |  15|
+
+
+
+
+### Q18
+
+\textit{Q18.How would you describe yourself: Are you generally an impatient person, or s}
+
+|                  |    |
+|:-----------------|---:|
+|Refused to answer |   0|
+|I don’t know      |   0|
+|10 Very patient   | 216|
+|9                 |  59|
+
+
+
+
+### Q19
+
+\textit{Q19.How do you see yourself at work: are you generally a person who is fully pre}
+
+|                                   |    |
+|:----------------------------------|---:|
+|Refused to answer                  |   1|
+|I don’t know                       |   2|
+|10 Very willing to take risks      |  92|

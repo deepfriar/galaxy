@@ -38,7 +38,7 @@
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
   pdftitle={EPR3 varnames (not)},
-  pdfauthor={2020-05-22},
+  pdfauthor={2020-06-04},
   colorlinks=true,
   linkcolor=blue,
   filecolor=Maroon,
@@ -47,6 +47,15 @@
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -122,7 +131,7 @@
 \newcommand{\exwide}{\newgeometry{margin=1in}}
 
 \title{EPR3 varnames (not)}
-\author{2020-05-22}
+\author{2020-06-04}
 \date{}
 
 \begin{document}
@@ -133,19 +142,375 @@
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
-\begin{center}
-\begin{tabular}{ldd}
-  \hline\hline  \multicolumn{1}{c}{ } & \multicolumn{2}{c}{Dependent variable (continuous): Rate among indicated - Linear} \\ \cmidrule(l){2-3}\multicolumn{1}{c}{ } & \multicolumn{1}{c}{middle class} & \multicolumn{1}{c}{skilled working class} \\ 
-  \hline
-\rule{0pt}{2.25ex}(Intercept) & \multicolumn{1}{c}{$0.382^{***}$} & \multicolumn{1}{c}{$0.042^{***}$} \\ 
-   & \multicolumn{1}{c}{$(0.002)$} & \multicolumn{1}{c}{$(0.002)$} \\ 
-  \rule{0pt}{6ex}Pov & \multicolumn{1}{c}{$0.788^{***}$} & \multicolumn{1}{c}{$0.972^{***}$} \\ 
-   & \multicolumn{1}{c}{$(0.008)$} & \multicolumn{1}{c}{$(0.011)$} \\ 
-   \hline
-\rule{0pt}{2.25ex}r.squared & \multicolumn{1}{c}{0.566} & \multicolumn{1}{c}{0.537} \\ 
-   n & \multicolumn{1}{c}{7201} & \multicolumn{1}{c}{7201} \\ 
-   \hline \multicolumn{1}{l}{\textit{Note:}} & \multicolumn{2}{r}{\textit{+ p < 0.1; * p < 0.05; ** p < 0.01; *** p < 0.001; standard errors in parentheses}} \\\end{tabular}
-\captionof{table}{Rate in indicated population vs. rate in White population, MSOAs}
-\end{center}
+\hypertarget{lebanon-citizen}{%
+\subsection{Lebanon, Citizen}\label{lebanon-citizen}}
+
+\hypertarget{id}{%
+\subsubsection{id}\label{id}}
+
+\textit{id}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+55028755 & 1\tabularnewline
+55028754 & 1\tabularnewline
+55028752 & 1\tabularnewline
+55028751 & 1\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q1}{%
+\subsubsection{Q1}\label{q1}}
+
+\textit{1. How would you evaluate the current economic situation in your country? }
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+Refused to answer & 0\tabularnewline
+I don't know & 2\tabularnewline
+Very bad & 850\tabularnewline
+Bad & 140\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q2}{%
+\subsubsection{Q2}\label{q2}}
+
+\textit{2. In what Governorate did you primarily grow up?}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+No answer & 0\tabularnewline
+Don't know & 0\tabularnewline
+Abroad & 0\tabularnewline
+El Nabatieh & 38\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{random}{%
+\subsubsection{random}\label{random}}
+
+\textit{random}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+6 & 157\tabularnewline
+5 & 163\tabularnewline
+4 & 172\tabularnewline
+3 & 172\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q1_1_1}{%
+\subsubsection{Q1\_1\_1}\label{q1_1_1}}
+
+\textit{1. Based on the hypothetical situation, do you think Minister M’s actions are ap}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+NA & 829\tabularnewline
+I don't know & 5\tabularnewline
+7 & 3\tabularnewline
+6 & 2\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q1_1_2}{%
+\subsubsection{Q1\_1\_2}\label{q1_1_2}}
+
+\textit{2. Based on the hypothetical situation, do you think Minister M’s actions are ac}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+NA & 829\tabularnewline
+I don't know & 4\tabularnewline
+8 & 3\tabularnewline
+7 & 3\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{lebanon-elite}{%
+\subsection{Lebanon, Elite}\label{lebanon-elite}}
+
+\hypertarget{id-1}{%
+\subsubsection{id}\label{id-1}}
+
+\textit{id}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+750 & 1\tabularnewline
+749 & 1\tabularnewline
+748 & 1\tabularnewline
+747 & 1\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q1-1}{%
+\subsubsection{Q1}\label{q1-1}}
+
+\textit{1. How would you evaluate the current economic situation in your country?}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+Refused to answer & 2\tabularnewline
+I don't know & 4\tabularnewline
+Very bad & 546\tabularnewline
+Bad & 196\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q2-1}{%
+\subsubsection{Q2}\label{q2-1}}
+
+\textit{2. In what District did you primarily grow up?}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+No answer & 6\tabularnewline
+Don't know & 0\tabularnewline
+Abroad & 1\tabularnewline
+El Nabatieh & 70\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{random-1}{%
+\subsubsection{random}\label{random-1}}
+
+\textit{random}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+6 & 127\tabularnewline
+5 & 129\tabularnewline
+4 & 124\tabularnewline
+3 & 116\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q1_1_1-1}{%
+\subsubsection{Q1\_1\_1}\label{q1_1_1-1}}
+
+\textit{1. Based on the hypothetical situation, do you think Minister M’s actions are ap}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+NA & 623\tabularnewline
+Refused to answer & 0\tabularnewline
+I don't know & 0\tabularnewline
+5 & 1\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q1_1_2-1}{%
+\subsubsection{Q1\_1\_2}\label{q1_1_2-1}}
+
+\textit{2. Based on the hypothetical situation, do you think Minister M’s actions are ac}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+NA & 623\tabularnewline
+Refused to answer & 0\tabularnewline
+I don't know & 0\tabularnewline
+8 & 1\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{tunisia-citizen}{%
+\subsection{Tunisia, Citizen}\label{tunisia-citizen}}
+
+\hypertarget{q1-2}{%
+\subsubsection{Q1}\label{q1-2}}
+
+\textit{Q1.How would you evaluate the current economic situation in your country?}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+Refused to answer & 1\tabularnewline
+I don't know & 15\tabularnewline
+Very bad & 585\tabularnewline
+Bad & 289\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q2-2}{%
+\subsubsection{Q2}\label{q2-2}}
+
+\textit{Q2.In what Governorate did you primarily grow up?}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+Decline to answer & 0\tabularnewline
+I don't know & 1\tabularnewline
+Outside the country & 4\tabularnewline
+Kebili & 22\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q17}{%
+\subsubsection{Q17}\label{q17}}
+
+\textit{Q17.Generally speaking, would you say that most people can be trusted, or you ca}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+Refused to answer & 0\tabularnewline
+I don't know & 4\tabularnewline
+10 Most people can be trusted & 64\tabularnewline
+9 & 11\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q18}{%
+\subsubsection{Q18}\label{q18}}
+
+\textit{Q18.How would you describe yourself: Are you generally an impatient person, or s}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+Refused to answer & 0\tabularnewline
+I don't know & 4\tabularnewline
+10 Very patient & 392\tabularnewline
+9 & 69\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q19}{%
+\subsubsection{Q19}\label{q19}}
+
+\textit{Q19.How do you see yourself at work: are you generally a person who is fully pre}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+Refused to answer & 1\tabularnewline
+I don't know & 10\tabularnewline
+10 Very willing to take risks & 176\tabularnewline
+9 & 51\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q20}{%
+\subsubsection{Q20}\label{q20}}
+
+\textit{Q20.You are given the opportunity to take a new and equally good job, with a 50-}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+Refused to answer & 3\tabularnewline
+I don't know & 12\tabularnewline
+Stay with the current job & 773\tabularnewline
+Take the new job & 212\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{tunisia-elite}{%
+\subsection{Tunisia, Elite}\label{tunisia-elite}}
+
+\hypertarget{id-2}{%
+\subsubsection{id}\label{id-2}}
+
+\textit{id}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+750 & 1\tabularnewline
+749 & 1\tabularnewline
+748 & 1\tabularnewline
+747 & 1\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q1-3}{%
+\subsubsection{Q1}\label{q1-3}}
+
+\textit{Q1.How would you evaluate the current economic situation in your country?}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+Refused to answer & 0\tabularnewline
+I don't know & 2\tabularnewline
+Very bad & 303\tabularnewline
+Bad & 400\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q2-3}{%
+\subsubsection{Q2}\label{q2-3}}
+
+\textit{Q2.In what Governorate did you primarily grow up?}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+Decline to answer & 0\tabularnewline
+I don't know & 0\tabularnewline
+Outside the country & 0\tabularnewline
+Kebili & 1\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q17-1}{%
+\subsubsection{Q17}\label{q17-1}}
+
+\textit{Q17.Generally speaking, would you say that most people can be trusted, or you ca}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+Refused to answer & 1\tabularnewline
+I don't know & 2\tabularnewline
+10 Most people can be trusted & 23\tabularnewline
+9 & 15\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q18-1}{%
+\subsubsection{Q18}\label{q18-1}}
+
+\textit{Q18.How would you describe yourself: Are you generally an impatient person, or s}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+Refused to answer & 0\tabularnewline
+I don't know & 0\tabularnewline
+10 Very patient & 216\tabularnewline
+9 & 59\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{q19-1}{%
+\subsubsection{Q19}\label{q19-1}}
+
+\textit{Q19.How do you see yourself at work: are you generally a person who is fully pre}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+\endhead
+Refused to answer & 1\tabularnewline
+I don't know & 2\tabularnewline
+10 Very willing to take risks & 92\tabularnewline
+\bottomrule
+\end{longtable}
 
 \end{document}

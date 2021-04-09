@@ -1,7 +1,7 @@
 Package: galaxy
 Type: Package
 Title: A more modern replacement for stargazer
-Version: 0.1.0
+Version: 0.1.2
 Author: Gordon Arsenoff
 Maintainer: Gordon Arsenoff <arsenoff@princeton.edu>
 Description: Builds regression tables from model input, using xtable and the tidyverse.
@@ -13,6 +13,7 @@ Imports:
     methods,
     plyr,
     purrr,
+    qdap,
     qpdf,
     reshape2,
     rlang,
@@ -21,7 +22,7 @@ Imports:
     tidyselect,
     wickr,
     xtable
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Suggests: 
     knitr,
     rmarkdown

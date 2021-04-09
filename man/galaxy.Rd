@@ -36,6 +36,8 @@ galaxy(
   .notit = FALSE,
   .toppr = NULL,
   .modno = TRUE,
+  .snote = TRUE,
+  .pnote = FALSE,
   .align = "r",
   .tbold = setdiff(.order, "(Intercept)"),
   ...
@@ -103,6 +105,10 @@ galaxy(
 \item{.toppr}{character. LaTeX code to put at the very top of the table. Default \code{NULL}.}
 
 \item{.modno}{logical.   Number models? Default \code{TRUE}.}
+
+\item{.snote}{logical.   Note what \code{.charz} go with what \code{.starz}? Default \code{TRUE}.}
+
+\item{.pnote}{logical.   Note what quantity is in parentheses? Default \code{FALSE}.}
 
 \item{.align}{character. Alignment of left-side columns. Default \code{"r"}.}
 

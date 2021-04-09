@@ -171,7 +171,7 @@ galaxy <- function(x,
   W <- dplyr::summarise(y)
   W <- dplyr::group_by(W)
   W <- dplyr::mutate(W, modno__ = 1:dplyr::n())
-  W <- if(.modno) {W} else {dplyr::mutate(W, modno__ = factor(.data$modno__, labels = .data[[dplyr::last(Rowcols)]]))}
+  # W <- if(.modno) {W} else {dplyr::mutate(W, modno__ = factor(.data$modno__, labels = .data[[dplyr::last(Rowcols)]]))}
   W <- dplyr::group_by(W, .data$modno__)
   W <- dplyr::select_at(W, setdiff(colnames(W), "modno__"))
   
@@ -182,7 +182,9 @@ galaxy <- function(x,
   y <- dplyr::select_at(y, setdiff(colnames(y), Rowcols))
   z <- dplyr::select_at(z, setdiff(colnames(z), Rowcols))
   
-  W <- if(.modno) {W} else {dplyr::select_at(W, setdiff(colnames(W), dplyr::last(Rowcols)))}
+  # W <- if(.modno) {W} else {dplyr::select_at(W, setdiff(colnames(W), dplyr::last(Rowcols)))}
+  
+  WW <- W
   
   # order threshold columns to bottom
   # TODO: this isn't done right
@@ -349,6 +351,7 @@ galaxy <- function(x,
                      cell = paste0("\\multicolumn{", .data$lengths, "}{c}{", .data$values, "}"),
                      line = paste0("\\cmidrule(l){", .data$from, "-", .data$to, "}"))
   W <- dplyr::mutate(W, line = ifelse(.data$from < .data$to, .data$line, ""))
+  
   H <- dplyr::summarise(W,
                         row = paste0(paste0(rep("\\multicolumn{1}{c}{ } & ", length(Occcols)), collapse = ""),
                                      paste0(.data$cell, collapse = " & "),
@@ -367,7 +370,7 @@ galaxy <- function(x,
 
   # reorder terms (is this not done already?)
   Y <- dplyr::arrange(Y, !.data$term=="(Intercept)")                                  # intercept to top
-  Y <- dplyr::mutate(Y, term = .fsort(as.character(.data$term)))                      # choose this order
+  Y <- dplyr::mutate(Y, term = .fsort(as.character(.data$term), .order))              # choose this order
   Y <- dplyr::arrange(Y, .data$term)                                                  # order by this order (???)
   Y <- dplyr::arrange(Y, stringr::str_detect(.data$term, stringr::fixed("|")))        # threshold terms to bottom
   Y <- if("component" %in% colnames(Y)) {dplyr::arrange(Y, .data$component)} else {Y} # sort by component
@@ -432,9 +435,11 @@ galaxy <- function(x,
   ## also mung the metadata
   Z$term <- as.character(Z$term)
   Z$term <- ifelse(Z$term==Z$term[1], paste0("\\rule{0pt}{2.25ex}", Z$term[1]), Z$term)
+  Z$term <- as.character(Z$term) # sic
   
   U$term <- as.character(U$term)
   U$term <- ifelse(U$term==U$term[1], paste0("\\rule{0pt}{2.25ex}", U$term[1]), U$term)
+  U$term <- as.character(U$term) # sic
 
   #### End second munging block
 
@@ -480,7 +485,14 @@ galaxy <- function(x,
   
   ## Add nested column headers
   
-  chead <- paste(rev(H$row), collapse = " ")
+  if(.modno) {} else {
+    befor <- paste0("^", WW$modno__, "$")
+    after <- dplyr::last(WW)
+    Y <- `colnames<-`(Y, qdap::multigsub(befor, after, colnames(Y), fixed=FALSE))
+    H <- dplyr::filter(H, !.data$row==dplyr::first(.data$row))
+  }
+  
+  chead <- paste(rev(H$row), collapse = " ") # wait why rev
   # foo <- stringr::str_split(colnames(Y), "___")
   # foo <- lapply(foo, rev)
   # 
@@ -519,7 +531,7 @@ galaxy <- function(x,
                          add.to.row = list(pos=list(-1, 
                                                     -1,
                                                     -1,
-                                                    rows + 1,
+                                                    min(rows + 1, z_rows[length(note)]),
                                                     z_rows[length(note)]),
                                            command=c(if(length(.toppr)) {.toppr}    else {""}, 
                                                      if(length(.hinot)) {.hinot}    else {""},
@@ -586,7 +598,7 @@ galaxy <- function(x,
 }
 
 # factor but take the levels in the order they're presented instead of sorting
-.fsort <- function(x) {factor(x, levels=unique(x))}
+.fsort <- function(x, i = character(0)) {factor(x, levels=c(intersect(i, unique(x)), setdiff(unique(x), i)))}
 
 .lifna <- function(l, r) {ifelse(is.na(r), as.character(l), as.character(r))}
 
